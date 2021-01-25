@@ -17,6 +17,10 @@ torch == 1.2.0
 
 https://github.com/bubbliiiing/ssd-pytorch
 
+### 权重文件下载
+预训练权重从右侧Releases中下载：将ssd_weigths.pth放入model_data文件夹下面。当然，也可以不用预训练权重，注释掉train.py中相应的代码即可。
+
+
 ### 多卡报错问题
 目前，程序中多卡训练会出现报错问题，尚未得到解决。因此，train.py和ssd.py中要指定0号卡进行训练。
 
