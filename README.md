@@ -16,3 +16,17 @@ torch == 1.2.0
 ### 参考
 
 https://github.com/bubbliiiing/ssd-pytorch
+
+### 多卡报错问题
+目前，程序中多卡训练会出现报错问题，尚未得到解决。因此，train.py和ssd.py中要指定0号卡进行训练。
+
+'''
+    return gather(outputs, output_device, dim=self.dim)
+  File "/home/ubuntu/anaconda3/envs/zpytorch/lib/python3.6/site-packages/torch/nn/parallel/scatter_gather.py", line 68, in gather
+    res = gather_map(outputs)
+  File "/home/ubuntu/anaconda3/envs/zpytorch/lib/python3.6/site-packages/torch/nn/parallel/scatter_gather.py", line 55, in gather_map
+    return Gather.apply(target_device, dim, *outputs)
+  File "/home/ubuntu/anaconda3/envs/zpytorch/lib/python3.6/site-packages/torch/nn/parallel/_functions.py", line 54, in forward
+    assert all(map(lambda i: i.is_cuda, inputs))
+AssertionError
+'''
